@@ -20,6 +20,6 @@ jobs:
     - name: npm install, build, and test
       run: |
         npm install
-        npm run test-cover-spec-3 --scripts-prepend-node-path=auto
+        npm test
       env:
         CI: true
