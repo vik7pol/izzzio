@@ -20,6 +20,6 @@ jobs:
     - name: npm install, build, and test
       run: |
         npm install
-        npm test-cover-spec-3
+        npm run test-cover-spec-3
       env:
         CI: true
