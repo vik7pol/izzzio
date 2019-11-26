@@ -57,7 +57,7 @@ const config = {
     p2pPort: 6013,                      //Порт p2p (лучше везде оставить одинаковым)
     sslMode: false,                     //Включить режим SSL
     httpServer: 'localhost',            //Адрес биндинга RPC и интерфейса
-    rpcPassword: getid() + getid(),
+    rpcPassword: 12345,
     initialPeers: [                     //Стартовые узлы, для синхронизации с сетью
     ],
     allowMultipleConnectionsFromIp: true,//False - если в сети много зацикливаний, True - если используется прокси для коннекта

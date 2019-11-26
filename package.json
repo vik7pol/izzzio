@@ -12,7 +12,12 @@
     "depency": "npm install",
     "build": "build.sh",
     "start": "node main.js",
-    "test": "cd BigNet/test && test"
+    "start-proof": "node --prof main.js",
+    "test": "cd BigNet/test && test",
+    "test-jasmine": "jasmine",
+    "test-cover-all": "istanbul cover --include-all-sources spec/specs.js && istanbul check-coverage",
+    "test-cover-spec": "istanbul cover  spec/specs.js && istanbul check-coverage",
+    "test-cover-spec-3": "istanbul --include-all-sources cover spec/specs.js   && istanbul check-coverage"
   },
   "dependencies": {
     "big-number": "^1.0.0",
@@ -60,5 +65,15 @@
   "bin": {
     "iz3node": "./main.js",
     "izzzio": "./main.js"
+  },
+  "devDependencies": {
+    "istanbul": "^1.0.0-alpha.2",
+    "jasmine": "^3.5.0",
+    "jasmine-console-reporter": "^3.1.0",
+    "jasmine-node": "^3.0.0",
+    "jasmine-supertest": "^1.0.0",
+    "mocha": "^6.2.2",
+    "superagent": "^5.1.0",
+    "supertest": "^4.0.2"
   }
 }

@@ -88,29 +88,29 @@ function Blockchain(config) {
     const EcmaContract = require('./modules/smartContracts/EcmaContract');
 
 
-    const basic = auth.basic({
-            realm: "RPC Auth"
-        }, (username, password, callback) => {
-            if(config.rpcPassword.length === 0) {
-                callback(true);
-                return;
-            }
-            callback(password === config.rpcPassword);
-        }
-    );
-
+    // const basic = auth.basic({
+    //         realm: "RPC Auth"
+    //     }, (username, password, callback) => {
+    //         if(config.rpcPassword.length === 0) {
+    //             callback(true);
+    //             return;
+    //         }
+    //         callback(12345 === config.rpcPassword);
+    //     }
+    // );
+    //
     const routes = {};
     const secretKeys = {};
-
-    if(config.rpcPassword.length !== 0) {
-        app.use(auth.connect(basic));
-    }
-
-    app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
-        extended: false
-    }));
-
-    app.use(bodyParser.json());
+    //
+    // if(config.rpcPassword.length !== 0) {
+    //     app.use(auth.connect(basic));
+    // }
+    //
+    // app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+    //     extended: false
+    // }));
+    //
+    // app.use(bodyParser.json());
 
     console.log('Initialize...');
     console.log('');
@@ -406,7 +406,7 @@ function Blockchain(config) {
                 for (let i = 0; i < maxBlock + 1; i++) {
                     let result;
                     try {
-                        result = exBlockhainGet.sync(null, i);
+                        result = exBlockhainGet.async(null, i);
                     } catch (e) {
                         continue;
                     }
